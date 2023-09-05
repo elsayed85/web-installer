@@ -42,7 +42,7 @@ class ServerRequirementFields
     public static function make(): Step
     {
         return Step::make('server')
-            ->label('Server Requirements')
+            ->label(__('installer.server_requirements.label'))
             ->schema(self::form());
     }
 }

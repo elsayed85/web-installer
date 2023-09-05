@@ -20,6 +20,7 @@ class WebInstallerServiceProvider extends PackageServiceProvider
             ->hasAssets()
             ->hasViews('web-installer')
             ->hasConfigFile('installer')
+            ->hasTranslations()
             ->hasRoute('web');
     }
 }

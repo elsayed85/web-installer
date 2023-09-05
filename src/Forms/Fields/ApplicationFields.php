@@ -15,15 +15,15 @@ class ApplicationFields implements StepContract
 
         foreach (config('installer.applications', []) as $key => $value) {
             if ($key == 'admin.password') {
-                $applicationFields[] = TextInput::make('applications.'.$key)
+                $applicationFields[] = TextInput::make('applications.' . $key)
                     ->label($value['label'])
                     ->password()
                     ->maxLength(255)
                     ->default($value['default'])
-                    ->dehydrateStateUsing(fn($state) => ! empty($state)
+                    ->dehydrateStateUsing(fn ($state) => !empty($state)
                         ? Hash::make($state) : "");
             } else {
-                $applicationFields[] = TextInput::make('applications.'.$key)
+                $applicationFields[] = TextInput::make('applications.' . $key)
                     ->label($value['label'])
                     ->required($value['required'])
                     ->rules($value['rules'])
@@ -37,7 +37,7 @@ class ApplicationFields implements StepContract
     public static function make(): Step
     {
         return Step::make('application')
-            ->label('Application Settings')
+            ->label(__('installer.application.label'))
             ->schema(self::form());
     }
 }

@@ -26,7 +26,7 @@ class EnvironmentFields implements StepContract
     public static function make(): Step
     {
         return Step::make('environment')
-            ->label('Environment')
+            ->label(__('installer.environment.label'))
             ->schema(self::form())
             ->beforeValidation(function ($state) {
                 $environment = $state['environments'] ?? [];

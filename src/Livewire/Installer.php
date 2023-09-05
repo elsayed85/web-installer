@@ -90,7 +90,7 @@ class Installer extends Component implements HasForms
         $result = $installationManager->run($inputs);
 
         Notification::make()
-            ->title($result ? 'Successfully Installed' : 'Installation Failed')
+            ->title($result ? __('installer.success') : __('installer.failed'))
             ->success()
             ->send();
 

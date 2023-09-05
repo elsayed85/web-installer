@@ -9,7 +9,7 @@ use Shipu\WebInstaller\Rules\DatabaseConnectionRule;
 
 return [
 
-    'name' => 'Laravel Web Installer',
+    'name' => 'Installer',
 
     'user_model' => \App\Models\User::class,
 

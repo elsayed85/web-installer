@@ -32,7 +32,7 @@ class FolderPermissionStep implements StepContract
     public static function make(): Step
     {
         return Step::make('permissions')
-            ->label('Permissions')
+            ->label(__('installer.permissions.label'))
             ->schema(self::form());
     }
 }
